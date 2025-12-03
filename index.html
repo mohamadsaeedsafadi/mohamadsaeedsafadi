@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="loading">Loading...</div>
 <header>
 <h1>Mohammad Safadi</h1>
 <p>Backend Software Developer - Laravel Specialist</p>
@@ -21,5 +22,18 @@
 <p>I am Mohammad Safadi, a backend software developer specializing in Laravel. I build powerful, scalable, and secure web applications.</p>
 </section>
 <footer>© 2025 Mohammad Safadi</footer>
+  <script>
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loading');
+    loader.classList.add('hidden');
+    
+    // Animate skills bars
+    document.querySelectorAll('.skill-bar span').forEach(bar => {
+        const percent = bar.getAttribute('data-percent');
+        bar.style.width = percent;
+    });
+});
+</script>
+
 </body>
 </html>
