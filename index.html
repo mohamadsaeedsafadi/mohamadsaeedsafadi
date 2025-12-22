@@ -1,58 +1,189 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Mohammad Safadi - Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>محمد سعید صفدي — مطوّر برمجيات | Portfolio</title>
+  <meta name="description" content="محفظة أعمال محمد سعيد صفدي — مطور Backend وLaravel. مشاريع عملية، ملفات قابلة للتحميل، وروابط GitHub." />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">
+        <div class="brand-mark">م</div>
+        <div class="brand-text">
+          <div class="name">محمد سعيد صفدي</div>
+          <div class="role">Backend & Laravel Developer</div>
+        </div>
+      </a>
 
-<div id="loading">
-  <div class="loader-spinner"></div>
-  Loading...
-</div>
+      <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
-<header>
-<h1>Mohammad Safadi</h1>
-<p>Backend Developer - Laravel Specialist</p>
-</header>
+      <nav id="nav" class="nav">
+        <a href="#about">عنّي</a>
+        <a href="#skills">المهارات</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#contact">تواصل</a>
+        <button id="dark-toggle" class="btn-ghost" aria-pressed="false" title="تبديل الوضع الداكن">🌙</button>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-</nav>
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>مرحبًا — أنا <span class="accent">محمد</span></h1>
+          <p class="lead">أنا مطور أنظمة خلفية متخصّص في Laravel. أقدّم حلولًا قابلة للتوسع، آمنة، وسهلة الصيانة.</p>
+          <p class="cta-row">
+            <a class="btn" href="#projects">عرض المشاريع</a>
+            <a class="btn-outline" href="https://github.com/mohamadsaeedsafadi" target="_blank" rel="noopener">مشروعي على GitHub</a>
+            <a class="btn-ghost" href="/files/CV-Mohamad-Safadi.pdf" target="_blank" rel="noopener">تحميل السيرة الذاتية</a>
+          </p>
+        </div>
 
-<section>
-<h2>About Me</h2>
-<p>I am a backend developer specialized in Laravel, building modern, scalable, and secure web applications.</p>
+        <aside class="hero-card">
+          <div class="avatar" aria-hidden="true">
+            <!-- Lightweight SVG avatar -->
+            <svg width="140" height="140" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="avatar">
+              <rect rx="18" width="120" height="120" fill="#0f172a"/>
+              <g transform="translate(30,28)" fill="#cbd5e1">
+                <circle cx="30" cy="20" r="18" fill="#fff"/>
+                <rect x="2" y="50" width="56" height="18" rx="6" fill="#fff"/>
+              </g>
+            </svg>
+          </div>
 
-<h2>Skills</h2>
-<div class="skills">
-  <div>Laravel</div>
-  <div class="skill-bar"><span data-percent="90%"></span></div>
+          <div class="hero-meta">
+            <div><strong>الموقع:</strong> دمشق، سوريا</div>
+            <div><strong>البريد:</strong> <a href="mailto:mohamad.safadi.dev@gmail.com">mohamad.safadi.dev@gmail.com</a></div>
+            <div class="socials">
+              <a href="https://github.com/mohamadsaeedsafadi" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-  <div>PHP</div>
-  <div class="skill-bar"><span data-percent="85%"></span></div>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">عنّي</h2>
+        <p class="section-lead">
+          مهندس برمجيات بخبرة في تصميم وتنفيذ تطبيقات الويب باستخدام Laravel و PHP. أحبّ تبسيط العمليات
+          وتحويل المتطلبات إلى حلول عملية قابلة للصيانة. أعمل على كتابة كود نظيف، توثيق واضح، واختبارات أساسية.
+        </p>
+      </div>
+    </section>
 
-  <div>MySQL</div>
-  <div class="skill-bar"><span data-percent="80%"></span></div>
+    <section id="skills" class="section gray">
+      <div class="container">
+        <h2 class="section-title">المهارات</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <div class="skill-head"><span>Laravel</span><span>Expert</span></div>
+            <div class="bar"><div class="bar-fill" style="width:92%"></div></div>
+          </div>
 
-  <div>Git & GitHub</div>
-  <div class="skill-bar"><span data-percent="75%"></span></div>
-</div>
-</section>
+          <div class="skill">
+            <div class="skill-head"><span>PHP</span><span>Advanced</span></div>
+            <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
+          </div>
 
-<footer>© 2025 Mohammad Safadi</footer>
+          <div class="skill">
+            <div class="skill-head"><span>MySQL</span><span>Advanced</span></div>
+            <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+          </div>
 
-<script>
-window.addEventListener('load', () => {
-    document.getElementById('loading').classList.add('hidden');
-    document.querySelectorAll('.skill-bar span').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-percent');
-    });
-});
-</script>
+          <div class="skill">
+            <div class="skill-head"><span>REST API</span><span>Advanced</span></div>
+            <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+          </div>
 
+          <div class="skill">
+            <div class="skill-head"><span>Git</span><span>Pro</span></div>
+            <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-head"><span>HTML/CSS & JS</span><span>Good</span></div>
+            <div class="bar"><div class="bar-fill" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">المشاريع</h2>
+
+        <div class="projects-grid">
+          <!-- Project: Complaint System -->
+          <article class="project-card">
+            <div class="project-head">
+              <h3>Complaint System</h3>
+              <div class="tags"><span>Laravel</span><span>PHP</span><span>MySQL</span></div>
+            </div>
+            <p class="project-desc">
+              نظام لإدارة الشكاوى يتيح للمستخدمين تسجيل الشكوى، متابعة حالتها، وللمشرفين إدارة الردود
+              وتحديث الحالات. شامل لعمليات CRUD، توثيق API، وصفحات إدارة مبسطة.
+            </p>
+            <div class="project-links">
+              <a class="btn-sm" href="https://github.com/mohamadsaeedsafadi/complaint-system" target="_blank" rel="noopener">شيفرة المصدر</a>
+              <!-- Live demo placeholder (أزل التعليق إن وُجد رابط حي) -->
+              <!-- <a class="btn-sm-outline" href="https://your-live-link.example" target="_blank">معاينة مباشرة</a> -->
+            </div>
+          </article>
+
+          <!-- Example placeholder for other projects; user can replace -->
+          <article class="project-card faint">
+            <div class="project-head">
+              <h3>مشروع تعليمي آخر</h3>
+              <div class="tags"><span>PHP</span><span>Web</span></div>
+            </div>
+            <p class="project-desc">يمكنك إضافة مشاريع إضافية هنا مع وصف موجز وروابط للكود أو المعاينة الحية.</p>
+            <div class="project-links">
+              <a class="btn-sm" href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section gray">
+      <div class="container">
+        <h2 class="section-title">تواصل</h2>
+        <p class="section-lead">هل تريد التعاون أو تحتاج مساعدة في مشروع؟ تواصل معي عبر:</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h4>البريد الإلكتروني</h4>
+            <a href="mailto:mohamad.safadi.dev@gmail.com">mohamad.safadi.dev@gmail.com</a>
+          </div>
+
+          <div class="contact-card">
+            <h4>GitHub</h4>
+            <a href="https://github.com/mohamadsaeedsafadi" target="_blank" rel="noopener">github.com/mohamadsaeedsafadi</a>
+          </div>
+
+          <div class="contact-card">
+            <h4>سيرة ذاتية</h4>
+            <a href="/files/CV-Mohamad-Safadi.pdf" target="_blank" rel="noopener">تحميل السيرة الذاتية (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> محمد سعيد صفدي — جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
