@@ -30,6 +30,8 @@ body{
 #nav{margin-inline-start:auto;display:flex;align-items:center;gap:14px}
 #nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
 #nav a:hover{background:var(--glass)}
+.lang-toggle{border:1px solid rgba(14,165,233,.35);background:rgba(14,165,233,.08);color:var(--accent);padding:7px 11px;border-radius:9px;font-weight:800;font-size:12px;cursor:pointer;transition:all .2s ease}
+.lang-toggle:hover{background:var(--accent);color:white;transform:translateY(-1px)}
 #nav-toggle{display:none;background:none;border:0;font-size:20px;padding:6px}
 
 /* Hero */
@@ -139,3 +141,13 @@ body{
 :root.dark{
   --bg:#071024;--card:#071826;--muted:#94a3b8;--accent:#38bdf8;--text:#e6eef8;--glass: rgba(255,255,255,0.04)
 }
+
+
+/* Language switcher */
+html[dir="ltr"] .brand{flex-direction:row}
+html[dir="rtl"] .brand{flex-direction:row}
+html[dir="ltr"] #nav{margin-inline-start:auto}
+html[dir="rtl"] #nav{margin-inline-start:auto}
+:root.dark .lang-toggle{background:rgba(56,189,248,.10);border-color:rgba(56,189,248,.3);color:#7dd3fc}
+:root.dark .lang-toggle:hover{background:var(--accent);color:#06111f}
+:root.dark #nav{background:#0b172a}
