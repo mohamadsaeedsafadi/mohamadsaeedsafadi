@@ -151,3 +151,36 @@ html[dir="rtl"] #nav{margin-inline-start:auto}
 :root.dark .lang-toggle{background:rgba(56,189,248,.10);border-color:rgba(56,189,248,.3);color:#7dd3fc}
 :root.dark .lang-toggle:hover{background:var(--accent);color:#06111f}
 :root.dark #nav{background:#0b172a}
+
+
+/* Final dark-mode contrast layer */
+:root.dark{
+  --bg:#07111f;
+  --card:#0d1b2a;
+  --surface:#0a1624;
+  --surface-2:#122235;
+  --border:rgba(148,163,184,.18);
+  --muted:#a9b8c8;
+  --accent:#38bdf8;
+  --text:#f1f5f9;
+  --glass:rgba(255,255,255,.06);
+  --shadow:rgba(0,0,0,.28);
+}
+:root.dark body{background:var(--bg);color:var(--text)}
+:root.dark .site-header{background:linear-gradient(90deg,#0a1624,#0d1b2a);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+:root.dark #nav a{color:var(--text)}
+:root.dark #nav a:hover{background:rgba(255,255,255,.07)}
+:root.dark .gray{background:#0a1624}
+:root.dark .skills-section{background:linear-gradient(180deg,#0a1624 0%,#0d1c2c 100%)}
+:root.dark .skill-category{background:#0d1b2a;border-color:rgba(148,163,184,.18);box-shadow:0 14px 38px rgba(0,0,0,.22)}
+:root.dark .skill-tags span{background:#122235;border-color:rgba(148,163,184,.2);color:#e2e8f0}
+:root.dark .skill-tags span:hover{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.35);color:#7dd3fc}
+:root.dark .skill-number{background:rgba(56,189,248,.1)}
+:root.dark .project-card,:root.dark .contact-card{background:var(--card);color:var(--text);box-shadow:0 12px 32px rgba(0,0,0,.22)}
+:root.dark .project-image{background:#122235}
+:root.dark .tags span{background:#122235;color:#dbeafe}
+:root.dark .project-desc,:root.dark .section-lead{color:var(--muted)}
+:root.dark .site-footer{border-color:var(--border)}
+:root.dark .btn{color:#04111d}
+:root.dark .btn-outline{border-color:rgba(255,255,255,.25)}
+:root.dark #nav{background:var(--card)}
