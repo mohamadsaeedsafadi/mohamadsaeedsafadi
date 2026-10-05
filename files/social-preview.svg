@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".6" stop-color="#142943"/><stop offset="1" stop-color="#294563"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6dc7a"/><stop offset="1" stop-color="#d7a93f"/></linearGradient><linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9be7e1"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<g opacity=".14" fill="none" stroke="#8ec5e8" stroke-width="3"><path d="M0 500h120l55-55h95l60-60h90"/><path d="M1200 90h-110l-70 70v70h-90l-70 70"/></g>
+<text x="600" y="315" text-anchor="middle" font-family="Arial,sans-serif" font-size="175" font-weight="900" fill="url(#gold)">M</text><text x="710" y="315" text-anchor="middle" font-family="Arial,sans-serif" font-size="175" font-weight="900" fill="url(#cyan)">S</text>
+<circle cx="625" cy="115" r="23" fill="#8fdad4"/><circle cx="685" cy="105" r="23" fill="#e5c45e"/><path d="M625 115L685 105M625 115L588 150M685 105L681 165" stroke="#b7e9e4" stroke-width="6" fill="none"/>
+<text x="600" y="420" text-anchor="middle" font-family="Arial,sans-serif" font-size="54" font-weight="700" letter-spacing="3" fill="#d7e4f0">MOHAMAD SAEED SAFADI</text>
+<text x="600" y="470" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="1.2" fill="#e3c878">SOFTWARE ENGINEER &amp; INFORMATION SYSTEMS</text>
+</svg>
