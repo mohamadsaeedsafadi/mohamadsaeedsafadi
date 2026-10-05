@@ -170,6 +170,208 @@ function applyLanguage(lang){
 applyLanguage(savedLanguage);
 langToggle.addEventListener('click',()=>applyLanguage((localStorage.getItem('site-language')||'ar')==='ar'?'en':'ar'));
 
+
+// Project image galleries
+const projectGalleries = [
+  [
+    'files/complaint/1.png'
+  ],
+  [
+    'files/Hands/إدارة التذاكر.png',
+    'files/Hands/الإحصائيات والتقارير1.png',
+    'files/Hands/الإحصائيات والتقارير2.png',
+    'files/Hands/الاشعارات.png',
+    'files/Hands/الخريطة.png',
+    'files/Hands/الدفع.png',
+    'files/Hands/الطلبات الواردة عند البروفايدر.png',
+    'files/Hands/العروض الحالية عند المستخدم.png',
+    'files/Hands/المحفظة بعد السحب.png',
+    'files/Hands/النسخ الاحتياطي.png',
+    'files/Hands/انشاء حساب.png',
+    'files/Hands/تصدير التقارير.png',
+    'files/Hands/تفاصيل للعملية السحب.png',
+    'files/Hands/توضيح حالة ارسال فاتورة مخفضة.png',
+    'files/Hands/توضيح لحالات الطلب اذا كان بدو دفع او تقييم.png',
+    'files/Hands/داشبورد( سوبر ادمن).png',
+    'files/Hands/سجل الطلبات كامل.png',
+    'files/Hands/طلب سحب رصيد.png',
+    'files/Hands/قائمة المحادثات.png',
+    'files/Hands/كمان ابروفايل للبروفايدر بس بصورة اوضح.jpg',
+    'files/Hands/واجهة مركز الدعم لتقديم الشكاوي والاقتراحات.jpg'
+  ],
+  [
+    'files/information/1.png',
+    'files/information/2.jpg',
+    'files/information/3.jpg'
+  ],
+  [
+    'files/OneHand/صورة1.png'
+  ],
+  [
+    'files/compailer/1.png'
+  ],
+  [
+    'files/Takaful/1.jpg',
+    'files/Takaful/photo_2026-10-05_04-22-04.jpg',
+    'files/Takaful/photo_2026-10-05_04-22-08.jpg',
+    'files/Takaful/photo_2026-10-05_04-22-12.jpg'
+  ],
+  [
+    'files/bank/1.png'
+  ],
+  [
+    'files/Rocket/screenshot_1.png',
+    'files/Rocket/screenshot_2.png',
+    'files/Rocket/screenshot_3.png'
+  ],
+  [
+    'files/xray/1.png'
+  ]
+];
+
+function initProjectGalleries(){
+  document.querySelectorAll('.project-card').forEach((card,index)=>{
+    const images=projectGalleries[index];
+    const frame=card.querySelector('.project-image');
+    const image=frame?.querySelector('img');
+    if(!images || !frame || !image) return;
+
+    let current=0;
+    image.src=images[0];
+    image.alt=card.querySelector('.project-head h3')?.textContent?.trim() || 'Project image';
+    image.loading='lazy';
+    image.decoding='async';
+    image.style.cursor=images.length>1?'zoom-in':'pointer';
+
+    if(images.length>1){
+      frame.classList.add('has-gallery');
+
+      const prev=document.createElement('button');
+      prev.type='button';
+      prev.className='gallery-arrow gallery-prev';
+      prev.setAttribute('aria-label','Previous image');
+      prev.innerHTML='&#10094;';
+
+      const next=document.createElement('button');
+      next.type='button';
+      next.className='gallery-arrow gallery-next';
+      next.setAttribute('aria-label','Next image');
+      next.innerHTML='&#10095;';
+
+      const dots=document.createElement('div');
+      dots.className='gallery-dots';
+      dots.setAttribute('aria-label','Image navigation');
+
+      images.forEach((_,dotIndex)=>{
+        const dot=document.createElement('button');
+        dot.type='button';
+        dot.className='gallery-dot';
+        dot.setAttribute('aria-label',`Image ${dotIndex+1}`);
+        dot.addEventListener('click',event=>{
+          event.stopPropagation();
+          showImage(dotIndex);
+        });
+        dots.appendChild(dot);
+      });
+
+      function showImage(indexToShow){
+        current=(indexToShow+images.length)%images.length;
+        image.src=images[current];
+        dots.querySelectorAll('.gallery-dot').forEach((dot,i)=>{
+          dot.classList.toggle('active',i===current);
+        });
+      }
+
+      prev.addEventListener('click',event=>{
+        event.stopPropagation();
+        showImage(current-1);
+      });
+      next.addEventListener('click',event=>{
+        event.stopPropagation();
+        showImage(current+1);
+      });
+
+      frame.append(prev,image,next,dots);
+      showImage(0);
+    } else {
+      frame.classList.add('single-image');
+    }
+
+    image.addEventListener('click',()=>{
+      openGalleryLightbox(images,current,card.querySelector('.project-head h3')?.textContent?.trim() || 'Project image');
+    });
+  });
+}
+
+function openGalleryLightbox(images,startIndex,title){
+  let overlay=document.getElementById('gallery-lightbox');
+  if(!overlay){
+    overlay=document.createElement('div');
+    overlay.id='gallery-lightbox';
+    overlay.className='gallery-lightbox';
+    overlay.innerHTML=`
+      <button type="button" class="lightbox-close" aria-label="Close image">&times;</button>
+      <button type="button" class="lightbox-arrow lightbox-prev" aria-label="Previous image">&#10094;</button>
+      <div class="lightbox-content">
+        <img class="lightbox-image" alt="">
+        <div class="lightbox-caption"></div>
+      </div>
+      <button type="button" class="lightbox-arrow lightbox-next" aria-label="Next image">&#10095;</button>
+    `;
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click',event=>{
+      if(event.target===overlay || event.target.classList.contains('lightbox-close')) closeGalleryLightbox();
+    });
+  }
+
+  let current=startIndex;
+  const lightboxImage=overlay.querySelector('.lightbox-image');
+  const caption=overlay.querySelector('.lightbox-caption');
+
+  function render(){
+    lightboxImage.src=images[current];
+    lightboxImage.alt=title;
+    caption.textContent=images.length>1 ? `${title} — ${current+1} / ${images.length}` : title;
+  }
+
+  const previous=overlay.querySelector('.lightbox-prev');
+  const next=overlay.querySelector('.lightbox-next');
+  previous.style.display=images.length>1?'flex':'none';
+  next.style.display=images.length>1?'flex':'none';
+
+  previous.onclick=event=>{
+    event.stopPropagation();
+    current=(current-1+images.length)%images.length;
+    render();
+  };
+  next.onclick=event=>{
+    event.stopPropagation();
+    current=(current+1)%images.length;
+    render();
+  };
+
+  overlay.classList.add('open');
+  document.body.classList.add('lightbox-open');
+  render();
+
+  document.onkeydown=function(event){
+    if(!document.getElementById('gallery-lightbox')?.classList.contains('open')) return;
+    if(event.key==='Escape') closeGalleryLightbox();
+    if(event.key==='ArrowLeft') next.click();
+    if(event.key==='ArrowRight') previous.click();
+  };
+}
+
+function closeGalleryLightbox(){
+  const overlay=document.getElementById('gallery-lightbox');
+  if(overlay) overlay.classList.remove('open');
+  document.body.classList.remove('lightbox-open');
+  document.onkeydown=null;
+}
+
+initProjectGalleries();
+
 // set current year
 document.getElementById('year').textContent=new Date().getFullYear();
 
