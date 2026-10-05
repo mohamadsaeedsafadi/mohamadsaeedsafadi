@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 768">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".55" stop-color="#12253d"/><stop offset="1" stop-color="#243b5a"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6dc7a"/><stop offset=".5" stop-color="#d7a93f"/><stop offset="1" stop-color="#ffe99b"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9be7e1"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+<filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-opacity=".45"/></filter>
+</defs>
+<rect width="1408" height="768" fill="url(#bg)"/>
+<g opacity=".16" fill="none" stroke="#8ec5e8" stroke-width="4">
+<path d="M0 570h140l55-55h105l65-65h100"/><circle cx="195" cy="515" r="8" fill="#8ec5e8"/><circle cx="360" cy="450" r="8" fill="#8ec5e8"/>
+<path d="M1040 0v80l-55 55v80l-70 70v90"/><circle cx="1040" cy="80" r="8" fill="#8ec5e8"/>
+<path d="M1200 0v120l-70 70v80h-90l-80 80"/><circle cx="1200" cy="120" r="8" fill="#8ec5e8"/>
+</g>
+<g filter="url(#shadow)">
+<text x="704" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="210" font-weight="900" fill="url(#gold)">M</text>
+<text x="840" y="390" text-anchor="middle" font-family="Arial,sans-serif" font-size="210" font-weight="900" fill="url(#cyan)">S</text>
+<circle cx="735" cy="150" r="28" fill="url(#cyan)"/><circle cx="805" cy="135" r="28" fill="url(#gold)"/>
+<path d="M735 150L805 135M735 150L690 190M805 135L800 205" stroke="#b7e9e4" stroke-width="8" fill="none"/>
+<rect x="750" y="190" width="62" height="76" rx="16" fill="url(#gold)"/><path d="M755 207h52M755 224h52M755 241h52" stroke="#26364b" stroke-width="7"/>
+</g>
+<text x="704" y="555" text-anchor="middle" font-family="Arial,sans-serif" font-size="68" font-weight="700" letter-spacing="4" fill="#b8cadc">MOHAMAD SAEED</text>
+<text x="704" y="610" text-anchor="middle" font-family="Arial,sans-serif" font-size="31" font-weight="700" letter-spacing="1.5" fill="#e3c878">SOFTWARE ENGINEER &amp; INFORMATION SYSTEMS</text>
+</svg>
