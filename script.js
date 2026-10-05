@@ -47,10 +47,10 @@ const translations={
   ar:{
     htmlLang:'ar', dir:'rtl', button:'EN', switchLabel:'Switch to English',
     title:'محمد سعيد صفدي — مهندس برمجيات | Portfolio',
-    description:'الموقع الشخصي لمحمد سعيد صفدي — مهندس برمجيات متخصص في تطوير الأنظمة الخلفية وLaravel. مشاريع عملية، مهارات تقنية، ووسائل تواصل.',
+    description:'الموقع الشخصي لمحمد سعيد صفدي — مهندس برمجيات ونظم معلومات. مشاريع عملية، مهارات تقنية، وخبرات في تصميم وتطوير الأنظمة والتطبيقات.',
     nav:['عنّي','المهارات','المشاريع','تواصل'],
     heroTitle:'مرحبًا — أنا <span class="accent">محمد</span>',
-    heroLead:'أنا مطور أنظمة خلفية متخصّص في Laravel. أقدّم حلولًا قابلة للتوسع، آمنة، وسهلة الصيانة.',
+    heroLead:'أنا مهندس برمجيات ونظم معلومات، أعمل على تحليل وتصميم وتطوير الأنظمة والتطبيقات وبناء حلول برمجية موثوقة، قابلة للتوسع، وآمنة وقابلة للصيانة باستخدام تقنيات وأطر عمل متعددة.',
     heroButtons:['عرض المشاريع','مشروعي على GitHub','تحميل السيرة الذاتية'],
     location:'الموقع:', locationValue:'دمشق، سوريا', email:'البريد:',
     aboutTitle:'عنّي',
@@ -78,10 +78,10 @@ const translations={
   en:{
     htmlLang:'en', dir:'ltr', button:'AR', switchLabel:'التبديل إلى العربية',
     title:'Mohamad Saeed Safadi — Software Engineer | Portfolio',
-    description:'Mohamad Saeed Safadi’s portfolio — Software Engineer specializing in backend development and Laravel. Practical projects, technical skills, and contact information.',
+    description:'Mohamad Saeed Safadi’s portfolio — Software Engineer and Information Systems Engineer focused on designing and developing reliable, scalable, secure, and maintainable software systems.',
     nav:['About','Skills','Projects','Contact'],
     heroTitle:'Hello — I’m <span class="accent">Mohamad</span>',
-    heroLead:'I am a backend developer specializing in Laravel, delivering scalable, secure, and maintainable solutions.',
+    heroLead:'I am a Software and Information Systems Engineer focused on analyzing, designing, and developing reliable, scalable, secure, and maintainable software systems using a range of modern technologies and frameworks.',
     heroButtons:['View Projects','My GitHub','Download CV'],
     location:'Location:', locationValue:'Damascus, Syria', email:'Email:',
     aboutTitle:'About Me',
@@ -126,7 +126,7 @@ function applyLanguage(lang){
 
   const brandMark=document.querySelector('.brand-mark');
   if(brandMark) brandMark.textContent=lang==='ar'?'م':'M';
-  setText('.brand-text .name','محمد سعيد صفدي');
+  setText('.brand-text .name',lang==='ar'?'محمد سعيد صفدي':'Mohamad Saeed Safadi');
   setText('.brand-text .role','Software Engineer');
   setText('.hero-text h1',null);
   const heroTitle=document.querySelector('.hero-text h1'); if(heroTitle) heroTitle.innerHTML=t.heroTitle;
@@ -164,7 +164,7 @@ function applyLanguage(lang){
   }
 
   const footer=document.querySelector('.site-footer p');
-  if(footer) footer.innerHTML='© <span id="year">'+new Date().getFullYear()+'</span> محمد سعيد صفدي — '+t.footer;
+  if(footer) footer.innerHTML='© <span id="year">'+new Date().getFullYear()+'</span> '+(lang==='ar'?'محمد سعيد صفدي':'Mohamad Saeed Safadi')+' — '+t.footer;
   localStorage.setItem('site-language',lang);
 }
 applyLanguage(savedLanguage);
